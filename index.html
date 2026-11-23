@@ -34,6 +34,35 @@ button {
   font-size: 17px;
   margin: 8px;
 }
+/* ===== الدرس الثالث ===== */
+.lesson3 h3 { margin-top: 24px; color: #173b75; }
+.lesson3 .en { direction: ltr; unicode-bidi: isolate; font-weight: bold; }
+.vocab-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0; }
+.vocab-item { background: #f0f4fa; border-radius: 12px; padding: 12px 8px; }
+.vocab-item .en { font-size: 20px; display: block; }
+.vocab-item .ar { display: block; margin-top: 4px; }
+.vocab-item .say { display: block; color: #1769aa; font-size: 14px; margin-top: 4px; }
+.vocab-item button { padding: 6px 12px; font-size: 14px; margin: 6px 0 0; }
+.dialog { text-align: right; max-width: 520px; margin: 0 auto; }
+.dialog .line { background: #f0f4fa; border-radius: 12px; padding: 10px 12px; margin: 8px 0; }
+.dialog .line.b { background: #e3eefb; }
+.dialog .who { font-weight: bold; color: #173b75; }
+.dialog .tr { display: block; color: #475569; font-size: 15px; margin-top: 3px; }
+.q { border-top: 1px solid #e2e8f0; padding-top: 12px; margin-top: 12px; }
+.q .opts button { min-width: 120px; }
+.q button.correct { background: #15803d; }
+.q button.wrong { background: #b91c1c; }
+.q button:disabled { opacity: 1; }
+.feedback { min-height: 22px; font-weight: bold; }
+.feedback.ok { color: #15803d; }
+.feedback.no { color: #b91c1c; }
+.result { background: #f0f4fa; border-radius: 12px; padding: 14px; margin-top: 14px; display: none; }
+.result ul { text-align: right; padding-right: 20px; }
+@media (max-width: 480px) {
+  .card { margin: 12px 8px; padding: 16px 12px; }
+  button { padding: 11px 18px; font-size: 16px; margin: 6px 4px; }
+  .q .opts button { min-width: 0; width: 100%; margin: 5px 0; }
+}
 </style>
 </head>
 <body>
@@ -86,9 +115,196 @@ button {
 </button>
 </div>
 
+<div class="card lesson3" id="lesson3">
+<h2>الدرس الثالث: الأرقام والعمر</h2>
+<p>بعد أن تعلمت التحية وتقديم نفسك، تعلّم الآن العدّ من 1 إلى 10 وكيف تسأل عن العمر وتجيب عنه.</p>
+
+<h3>المفردات</h3>
+<p>اضغط 🔊 لسماع النطق (إن كان جهازك يدعم ذلك).</p>
+<div class="vocab-list" id="vocab3"></div>
+
+<h3>حوار تطبيقي</h3>
+<div class="dialog">
+  <div class="line"><span class="who">Sara:</span> <span class="en">Hello! How old are you?</span><span class="tr">مرحباً! كم عمرك؟</span></div>
+  <div class="line b"><span class="who">Ali:</span> <span class="en">I am ten years old. And you?</span><span class="tr">عمري عشر سنوات. وأنتِ؟</span></div>
+  <div class="line"><span class="who">Sara:</span> <span class="en">I am nine years old.</span><span class="tr">عمري تسع سنوات.</span></div>
+  <div class="line b"><span class="who">Ali:</span> <span class="en">Nice to meet you, Sara!</span><span class="tr">سعيد بلقائك يا سارة!</span></div>
+</div>
+
+<h3>تمارين: اختر الإجابة الصحيحة</h3>
+<div id="exercises3"></div>
+
+<h3>اختبار نهاية الدرس</h3>
+<p>أجب عن جميع الأسئلة ثم اضغط "عرض النتيجة".</p>
+<div id="quiz3"></div>
+<button id="quiz3-submit">عرض النتيجة</button>
+<button id="quiz3-reset">إعادة الاختبار</button>
+<div class="result" id="quiz3-result"></div>
+</div>
+
 <footer>
 <p>English AI Master © 2026</p>
 </footer>
+
+<script>
+(function () {
+  var vocab = [
+    ["One", "واحد", "وَن"], ["Two", "اثنان", "تُو"], ["Three", "ثلاثة", "ثْرِي"],
+    ["Four", "أربعة", "فُور"], ["Five", "خمسة", "فايف"], ["Six", "ستة", "سِكْس"],
+    ["Seven", "سبعة", "سِفِن"], ["Eight", "ثمانية", "إيت"], ["Nine", "تسعة", "ناين"],
+    ["Ten", "عشرة", "تِن"], ["How old are you?", "كم عمرك؟", "هاو أولد آر يو؟"],
+    ["I am ten years old", "عمري عشر سنوات", "آي آم تِن ييرز أولد"]
+  ];
+
+  function speak(text) {
+    if (!("speechSynthesis" in window)) { alert("النطق الصوتي غير مدعوم على هذا الجهاز"); return; }
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.rate = 0.8;
+    window.speechSynthesis.speak(u);
+  }
+
+  var vbox = document.getElementById("vocab3");
+  vocab.forEach(function (v) {
+    var d = document.createElement("div");
+    d.className = "vocab-item";
+    d.innerHTML = '<span class="en"></span><span class="ar"></span><span class="say"></span>';
+    d.querySelector(".en").textContent = v[0];
+    d.querySelector(".ar").textContent = v[1];
+    d.querySelector(".say").textContent = "النطق: " + v[2];
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = "🔊 استمع";
+    b.setAttribute("aria-label", "استمع إلى نطق " + v[0]);
+    b.onclick = function () { speak(v[0]); };
+    d.appendChild(b);
+    vbox.appendChild(d);
+  });
+
+  function renderQ(container, q, i, onPick) {
+    var w = document.createElement("div");
+    w.className = "q";
+    var p = document.createElement("p");
+    p.innerHTML = (i + 1) + ". ";
+    p.appendChild(document.createTextNode(q.q));
+    w.appendChild(p);
+    var opts = document.createElement("div");
+    opts.className = "opts";
+    q.o.forEach(function (text, j) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = text;
+      b.onclick = function () { onPick(w, opts, j, b); };
+      opts.appendChild(b);
+    });
+    w.appendChild(opts);
+    var f = document.createElement("div");
+    f.className = "feedback";
+    w.appendChild(f);
+    container.appendChild(w);
+    return w;
+  }
+
+  // التمارين: تصحيح فوري لكل سؤال
+  var exercises = [
+    { q: "ما معنى Three؟", o: ["ثلاثة", "ثمانية", "اثنان"], a: 0 },
+    { q: "كيف تكتب الرقم 7 بالإنجليزية؟", o: ["Six", "Seven", "Nine"], a: 1 },
+    { q: "ما معنى How old are you؟", o: ["كيف حالك؟", "ما اسمك؟", "كم عمرك؟"], a: 2 },
+    { q: "اختر الجملة الصحيحة لتقول: عمري خمس سنوات", o: ["I am five years old", "My name is five", "I am fine"], a: 0 }
+  ];
+  var ebox = document.getElementById("exercises3");
+  exercises.forEach(function (q, i) {
+    renderQ(ebox, q, i, function (w, opts, j, btn) {
+      var f = w.querySelector(".feedback");
+      var buttons = opts.querySelectorAll("button");
+      buttons.forEach(function (b) { b.classList.remove("wrong"); });
+      if (j === q.a) {
+        btn.classList.add("correct");
+        buttons.forEach(function (b) { b.disabled = true; });
+        f.className = "feedback ok"; f.textContent = "إجابة صحيحة! أحسنت 👏";
+      } else {
+        btn.classList.add("wrong");
+        f.className = "feedback no"; f.textContent = "حاول مرة أخرى";
+      }
+    });
+  });
+
+  // الاختبار النهائي: النتيجة تظهر بعد الإجابة عن كل الأسئلة
+  var quiz = [
+    { q: "ما معنى Five؟", o: ["أربعة", "خمسة", "ستة"], a: 1 },
+    { q: "الرقم 10 بالإنجليزية هو:", o: ["Ten", "Two", "Eight"], a: 0 },
+    { q: "ما معنى Eight؟", o: ["ثلاثة", "تسعة", "ثمانية"], a: 2 },
+    { q: "سألك صديقك: How old are you? بماذا تجيب؟", o: ["I am fine", "I am nine years old", "Goodbye"], a: 1 },
+    { q: "Two + Two = ؟", o: ["Four", "Three", "Six"], a: 0 }
+  ];
+  var qbox = document.getElementById("quiz3");
+  var answers = [];
+  var items = [];
+  var submitted = false;
+
+  function buildQuiz() {
+    qbox.innerHTML = ""; answers = []; items = []; submitted = false;
+    var r = document.getElementById("quiz3-result");
+    r.style.display = "none"; r.innerHTML = "";
+    quiz.forEach(function (q, i) {
+      items.push(renderQ(qbox, q, i, function (w, opts, j, btn) {
+        if (submitted) return;
+        answers[i] = j;
+        opts.querySelectorAll("button").forEach(function (b) { b.style.background = ""; });
+        btn.style.background = "#173b75";
+        w.querySelector(".feedback").className = "feedback";
+        w.querySelector(".feedback").textContent = "";
+      }));
+    });
+  }
+
+  document.getElementById("quiz3-submit").onclick = function () {
+    if (submitted) return;
+    var unanswered = 0;
+    quiz.forEach(function (q, i) { if (answers[i] === undefined) unanswered++; });
+    if (unanswered > 0) { alert("أجب عن جميع الأسئلة أولاً (متبقٍ " + unanswered + ")"); return; }
+    submitted = true;
+    var score = 0;
+    var r = document.getElementById("quiz3-result");
+    var list = document.createElement("ul");
+    quiz.forEach(function (q, i) {
+      var w = items[i];
+      var buttons = w.querySelectorAll(".opts button");
+      buttons.forEach(function (b) { b.disabled = true; b.style.background = ""; });
+      buttons[q.a].classList.add("correct");
+      var f = w.querySelector(".feedback");
+      if (answers[i] === q.a) {
+        score++;
+        f.className = "feedback ok"; f.textContent = "صحيح ✔";
+      } else {
+        buttons[answers[i]].classList.add("wrong");
+        f.className = "feedback no"; f.textContent = "خطأ ✘ — الإجابة الصحيحة: " + q.o[q.a];
+      }
+      var li = document.createElement("li");
+      li.textContent = (i + 1) + ". " + q.q + " ← " + q.o[q.a];
+      list.appendChild(li);
+    });
+    var msg = score === quiz.length ? "ممتاز! أتقنت الدرس الثالث 🎉"
+            : score >= 3 ? "جيد جداً! راجع الأخطاء وحاول مجدداً."
+            : "لا بأس، راجع المفردات والحوار ثم أعد الاختبار.";
+    r.innerHTML = "";
+    var h = document.createElement("h3");
+    h.textContent = "نتيجتك: " + score + " من " + quiz.length;
+    var p = document.createElement("p"); p.textContent = msg;
+    var p2 = document.createElement("p"); p2.textContent = "الإجابات الصحيحة:";
+    r.appendChild(h); r.appendChild(p); r.appendChild(p2); r.appendChild(list);
+    r.style.display = "block";
+    r.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
+  document.getElementById("quiz3-reset").onclick = buildQuiz;
+  buildQuiz();
+
+  // تشغيل التطبيق دون إنترنت بعد أول زيارة
+  if ("serviceWorker" in navigator && location.protocol !== "file:") {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
+  }
+})();
+</script>
 
 </body>
 </html>

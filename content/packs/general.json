@@ -1,0 +1,166 @@
+{
+  "id": "general",
+  "type": "core",
+  "title_ar": "الإنجليزية العامة للمبتدئين",
+  "title_en": "General English for Beginners",
+  "icon": "🌱",
+  "level": "A1",
+  "order": 0,
+  "description_ar": "الأساس: التحيات، التعارف، الأرقام والعمر. يضم الدروس الثلاثة الأولى في التطبيق.",
+  "vocabulary": [
+    { "id": "gen.v.hello", "term": "Hello", "ar": "مرحباً", "say_ar": "هَلُو", "pos": "interjection", "level": "A1", "example_en": "Hello, Sara!", "example_ar": "مرحباً يا سارة!", "lesson": "gen.l1" },
+    { "id": "gen.v.good-morning", "term": "Good morning", "ar": "صباح الخير", "say_ar": "جُود مورنِنج", "pos": "phrase", "level": "A1", "example_en": "Good morning, teacher.", "example_ar": "صباح الخير يا معلم.", "lesson": "gen.l1" },
+    { "id": "gen.v.thank-you", "term": "Thank you", "ar": "شكراً", "say_ar": "ثانك يو", "pos": "phrase", "level": "A1", "example_en": "Thank you for your help.", "example_ar": "شكراً على مساعدتك.", "lesson": "gen.l1" },
+    { "id": "gen.v.goodbye", "term": "Goodbye", "ar": "إلى اللقاء", "say_ar": "جُود باي", "pos": "interjection", "level": "A1", "example_en": "Goodbye, see you tomorrow.", "example_ar": "إلى اللقاء، أراك غداً.", "lesson": "gen.l1" },
+    { "id": "gen.v.whats-your-name", "term": "What is your name?", "ar": "ما اسمك؟", "say_ar": "وُت إز يور نيم؟", "pos": "phrase", "level": "A1", "example_en": "Hi! What is your name?", "example_ar": "أهلاً! ما اسمك؟", "lesson": "gen.l2" },
+    { "id": "gen.v.my-name-is", "term": "My name is ...", "ar": "اسمي ...", "say_ar": "ماي نيم إز", "pos": "phrase", "level": "A1", "example_en": "My name is Ahmed.", "example_ar": "اسمي أحمد.", "lesson": "gen.l2" },
+    { "id": "gen.v.how-are-you", "term": "How are you?", "ar": "كيف حالك؟", "say_ar": "هاو آر يو؟", "pos": "phrase", "level": "A1", "example_en": "Hello Ali, how are you?", "example_ar": "مرحباً يا علي، كيف حالك؟", "lesson": "gen.l2" },
+    { "id": "gen.v.i-am-fine", "term": "I am fine", "ar": "أنا بخير", "say_ar": "آي آم فاين", "pos": "phrase", "level": "A1", "example_en": "I am fine, thank you.", "example_ar": "أنا بخير، شكراً.", "lesson": "gen.l2" },
+    { "id": "gen.v.nice-to-meet-you", "term": "Nice to meet you", "ar": "سعيد بلقائك", "say_ar": "نايس تو ميت يو", "pos": "phrase", "level": "A1", "example_en": "Nice to meet you, Ahmed.", "example_ar": "سعيد بلقائك يا أحمد.", "lesson": "gen.l2" },
+    { "id": "gen.v.one", "term": "One", "ar": "واحد", "say_ar": "وَن", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.two", "term": "Two", "ar": "اثنان", "say_ar": "تُو", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.three", "term": "Three", "ar": "ثلاثة", "say_ar": "ثْرِي", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.four", "term": "Four", "ar": "أربعة", "say_ar": "فُور", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.five", "term": "Five", "ar": "خمسة", "say_ar": "فايف", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.six", "term": "Six", "ar": "ستة", "say_ar": "سِكْس", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.seven", "term": "Seven", "ar": "سبعة", "say_ar": "سِفِن", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.eight", "term": "Eight", "ar": "ثمانية", "say_ar": "إيت", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.nine", "term": "Nine", "ar": "تسعة", "say_ar": "ناين", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.ten", "term": "Ten", "ar": "عشرة", "say_ar": "تِن", "pos": "number", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.how-old", "term": "How old are you?", "ar": "كم عمرك؟", "say_ar": "هاو أولد آر يو؟", "pos": "phrase", "level": "A1", "lesson": "gen.l3" },
+    { "id": "gen.v.years-old", "term": "I am ten years old", "ar": "عمري عشر سنوات", "say_ar": "آي آم تِن ييرز أولد", "pos": "phrase", "level": "A1", "lesson": "gen.l3" }
+  ],
+  "grammar": [
+    {
+      "id": "gen.g.verb-to-be",
+      "title_ar": "فعل الكينونة: am / is / are",
+      "level": "A1",
+      "rule_ar": "في الإنجليزية لا تُبنى الجملة الاسمية دون فعل. نستخدم am مع I، و is مع he/she/it والمفرد، و are مع you/we/they والجمع.",
+      "pattern": "Subject + am/is/are + ...",
+      "examples": [
+        { "en": "I am fine.", "ar": "أنا بخير." },
+        { "en": "She is a teacher.", "ar": "هي معلمة." },
+        { "en": "They are students.", "ar": "هم طلاب." }
+      ],
+      "common_mistakes": [
+        { "wrong": "I fine.", "right": "I am fine.", "note_ar": "لا تحذف am كما نفعل في العربية." },
+        { "wrong": "You is my friend.", "right": "You are my friend.", "note_ar": "you تأخذ are دائماً حتى للمفرد." }
+      ]
+    },
+    {
+      "id": "gen.g.age",
+      "title_ar": "التعبير عن العمر",
+      "level": "A1",
+      "rule_ar": "نعبّر عن العمر بفعل الكينونة وليس بفعل have: I am + الرقم + years old. ويمكن الاكتفاء بالرقم: I am ten.",
+      "pattern": "Subject + am/is/are + number + years old",
+      "examples": [
+        { "en": "I am ten years old.", "ar": "عمري عشر سنوات." },
+        { "en": "He is nine.", "ar": "عمره تسع سنوات." }
+      ],
+      "common_mistakes": [
+        { "wrong": "I have ten years.", "right": "I am ten years old.", "note_ar": "ترجمة حرفية من العربية/الفرنسية؛ الصحيح استخدام am." },
+        { "wrong": "I am ten year old.", "right": "I am ten years old.", "note_ar": "years بالجمع بعد الأرقام الأكبر من واحد." }
+      ]
+    },
+    {
+      "id": "gen.g.wh-questions",
+      "title_ar": "أسئلة What و How",
+      "level": "A1",
+      "rule_ar": "What تسأل عن الشيء (ما/ماذا)، و How تسأل عن الحال أو الطريقة (كيف)، و How old تسأل عن العمر. يأتي فعل الكينونة قبل الفاعل في السؤال.",
+      "pattern": "Wh-word + am/is/are + subject ?",
+      "examples": [
+        { "en": "What is your name?", "ar": "ما اسمك؟" },
+        { "en": "How are you?", "ar": "كيف حالك؟" },
+        { "en": "How old is your brother?", "ar": "كم عمر أخيك؟" }
+      ],
+      "common_mistakes": [
+        { "wrong": "What your name is?", "right": "What is your name?", "note_ar": "الفعل is يسبق الفاعل في السؤال." }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "gen.l1", "order": 1, "level": "A1",
+      "title_ar": "الدرس الأول: التحيات",
+      "objectives_ar": ["إلقاء التحية والوداع", "شكر الآخرين"],
+      "vocabulary": ["gen.v.hello", "gen.v.good-morning", "gen.v.thank-you", "gen.v.goodbye"],
+      "grammar": [],
+      "legacy": { "page": "index.html", "note_ar": "المحتوى الأصلي معروض في الصفحة الرئيسية دون تغيير." }
+    },
+    {
+      "id": "gen.l2", "order": 2, "level": "A1",
+      "title_ar": "الدرس الثاني: التعارف وتقديم النفس",
+      "objectives_ar": ["السؤال عن الاسم والإجابة", "السؤال عن الحال"],
+      "vocabulary": ["gen.v.whats-your-name", "gen.v.my-name-is", "gen.v.how-are-you", "gen.v.i-am-fine", "gen.v.nice-to-meet-you"],
+      "grammar": ["gen.g.verb-to-be", "gen.g.wh-questions"],
+      "legacy": { "page": "index.html", "note_ar": "المحتوى الأصلي معروض في الصفحة الرئيسية دون تغيير." }
+    },
+    {
+      "id": "gen.l3", "order": 3, "level": "A1",
+      "title_ar": "الدرس الثالث: الأرقام والعمر",
+      "objectives_ar": ["العدّ من 1 إلى 10", "السؤال عن العمر والإجابة"],
+      "vocabulary": ["gen.v.one", "gen.v.two", "gen.v.three", "gen.v.four", "gen.v.five", "gen.v.six", "gen.v.seven", "gen.v.eight", "gen.v.nine", "gen.v.ten", "gen.v.how-old", "gen.v.years-old"],
+      "grammar": ["gen.g.age"],
+      "dialog": [
+        { "who": "Sara", "en": "Hello! How old are you?", "ar": "مرحباً! كم عمرك؟" },
+        { "who": "Ali", "en": "I am ten years old. And you?", "ar": "عمري عشر سنوات. وأنتِ؟" },
+        { "who": "Sara", "en": "I am nine years old.", "ar": "عمري تسع سنوات." },
+        { "who": "Ali", "en": "Nice to meet you, Sara!", "ar": "سعيد بلقائك يا سارة!" }
+      ],
+      "legacy": { "page": "index.html#lesson3", "note_ar": "المحتوى الأصلي معروض في الصفحة الرئيسية دون تغيير." }
+    }
+  ],
+  "questions": [
+    { "id": "gen.q.01", "type": "mcq", "skill": "comprehension", "difficulty": 1, "lesson": "gen.l1", "refs": ["gen.v.goodbye"],
+      "prompt_ar": "صديقك يغادر في نهاية اليوم. ماذا تقول له؟",
+      "options": ["Goodbye", "Good morning", "Hello", "Thank you"], "answer": 0,
+      "explanation_ar": "Goodbye للوداع، أما Good morning فهي تحية عند اللقاء صباحاً." },
+    { "id": "gen.q.02", "type": "mcq", "skill": "application", "difficulty": 2, "lesson": "gen.l1", "refs": ["gen.v.good-morning", "gen.v.goodbye"],
+      "prompt_ar": "الساعة 8 صباحاً وقد وصلت للتو إلى المدرسة. أي عبارة هي الأنسب لتحية المعلم؟",
+      "options": ["Goodbye, teacher.", "Good morning, teacher.", "Thank you, teacher.", "Nice to meet you, goodbye."], "answer": 1,
+      "explanation_ar": "عند الوصول صباحاً نقول Good morning؛ Goodbye تُقال عند المغادرة." },
+    { "id": "gen.q.03", "type": "match", "skill": "comprehension", "difficulty": 2, "lesson": "gen.l2",
+      "refs": ["gen.v.how-are-you", "gen.v.whats-your-name", "gen.v.nice-to-meet-you", "gen.v.i-am-fine"],
+      "prompt_ar": "صِل كل عبارة بمعناها:",
+      "pairs": [["How are you?", "كيف حالك؟"], ["What is your name?", "ما اسمك؟"], ["Nice to meet you", "سعيد بلقائك"], ["I am fine", "أنا بخير"]],
+      "explanation_ar": "انتبه للكلمة الأولى: How = كيف، What = ما." },
+    { "id": "gen.q.04", "type": "order", "skill": "application", "difficulty": 2, "lesson": "gen.l2", "refs": ["gen.g.wh-questions", "gen.v.whats-your-name"],
+      "prompt_ar": "رتّب الكلمات لتكوّن سؤالاً صحيحاً عن الاسم:",
+      "tokens": ["What", "is", "your", "name", "?"],
+      "explanation_ar": "في السؤال يأتي is قبل الفاعل: What is your name?" },
+    { "id": "gen.q.05", "type": "mcq", "skill": "analysis", "difficulty": 3, "lesson": "gen.l2", "refs": ["gen.g.verb-to-be"],
+      "prompt_ar": "أيّ جملة تحتوي على خطأ نحوي؟",
+      "options": ["I am fine.", "You are my friend.", "I fine, thank you.", "She is a teacher."], "answer": 2,
+      "explanation_ar": "في الإنجليزية لا بد من فعل الكينونة: I am fine." },
+    { "id": "gen.q.06", "type": "fill", "skill": "application", "difficulty": 3, "lesson": "gen.l2", "refs": ["gen.g.verb-to-be"],
+      "prompt_ar": "أكمل بالكلمة المناسبة: You ___ my best friend.",
+      "accept": ["are"], "hint_ar": "you تأخذ دائماً الصيغة نفسها حتى للمفرد.",
+      "explanation_ar": "you + are." },
+    { "id": "gen.q.07", "type": "mcq", "skill": "comprehension", "difficulty": 1, "lesson": "gen.l3", "refs": ["gen.v.six"],
+      "prompt_ar": "ما الرقم الذي يُكتب Six؟",
+      "options": ["7", "6", "9", "3"], "answer": 1,
+      "explanation_ar": "Six = 6، و Seven = 7." },
+    { "id": "gen.q.08", "type": "mcq", "skill": "application", "difficulty": 3, "lesson": "gen.l3", "refs": ["gen.v.three", "gen.v.four", "gen.v.seven"],
+      "prompt_ar": "Three + Four = ?",
+      "options": ["Eight", "Six", "Seven", "Nine"], "answer": 2,
+      "explanation_ar": "3 + 4 = 7 أي Seven." },
+    { "id": "gen.q.09", "type": "mcq", "skill": "analysis", "difficulty": 4, "lesson": "gen.l3", "refs": ["gen.g.age"],
+      "prompt_ar": "قال أحد المتعلمين: I have nine years. ما التصحيح الأدق؟",
+      "options": ["I have nine year.", "I am nine years old.", "I am nine year old.", "My age have nine years."], "answer": 1,
+      "explanation_ar": "العمر يُعبَّر عنه بـ am وليس have، و years بالجمع: I am nine years old." },
+    { "id": "gen.q.10", "type": "multi", "skill": "analysis", "difficulty": 4, "lesson": "gen.l3", "refs": ["gen.g.age"],
+      "prompt_ar": "اختر كل الإجابات الصحيحة عن السؤال How old are you? (قد تكون أكثر من إجابة)",
+      "options": ["I am eight.", "I am eight years old.", "I have eight years.", "I am fine."], "answer": [0, 1],
+      "explanation_ar": "يمكن قول I am eight أو I am eight years old. أما I am fine فهي جواب How are you." },
+    { "id": "gen.q.11", "type": "fill", "skill": "application", "difficulty": 4, "lesson": "gen.l3", "refs": ["gen.v.ten", "gen.v.five", "gen.v.two"],
+      "prompt_ar": "اكتب الناتج بالإنجليزية (بالحروف): Ten ÷ Two = ___",
+      "accept": ["five"], "explanation_ar": "10 ÷ 2 = 5 أي Five." },
+    { "id": "gen.q.12", "type": "mcq", "skill": "analysis", "difficulty": 5, "lesson": "gen.l3", "refs": ["gen.g.wh-questions", "gen.v.how-old", "gen.v.how-are-you"],
+      "prompt_ar": "سمعت الجواب: \"He is nine.\" ما السؤال الذي طُرح على الأرجح؟",
+      "options": ["How is he?", "How old is he?", "What is his name?", "How old are you?"], "answer": 1,
+      "explanation_ar": "الجواب عن عمر شخص غائب (he)، فالسؤال How old is he؟ أما How old are you فيخاطب الشخص نفسه." }
+  ],
+  "quizzes": [
+    { "id": "gen.quiz.placement", "title_ar": "اختبار تحديد مستوى المبتدئ", "pick": { "count": 8, "adaptive": true }, "pass": 0.7 }
+  ]
+}
